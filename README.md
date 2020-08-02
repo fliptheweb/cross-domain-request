@@ -29,9 +29,9 @@ How it works and what's happened under the hood:
 - Fill the form data and submit to passed url, but with `target` page won't be reloaded and result will be in the iframe;
 - Clean all artifacts.
 
-TODO:
+#### TODO:
 - [ ] custom function for serialize nested data
-
+- [ ] tests
 
 #### References
 - (post-robot)[https://github.com/krakenjs/post-robot] - Cross-domain post-messaging library

@@ -2,11 +2,15 @@
   "name": "cross-domain-request",
   "version": "1.0.0",
   "description": "Make POST/GET cross-domain requests without CORS",
+  "keywords": ["CORS", "cross domain request", "post request"],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "author": "Artur Kornakov",
   "license": "MIT",

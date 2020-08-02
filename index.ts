@@ -1,5 +1,14 @@
-const DEFAULT_OPTIONS = {
-  method: 'POST',
+enum Method {
+  GET = 'GET',
+  POST = 'POST',
+}
+
+type Options = {
+  method?: Method
+}
+
+const DEFAULT_OPTIONS: Options = {
+  method: Method.POST,
 }
 
 const HIDDEN_STYLES = {
@@ -18,7 +27,7 @@ const HIDDEN_STYLES_STRING = Object.entries(HIDDEN_STYLES).map(([prop, val]) => 
  * @param  {Object} data
  * @param  {Object} [options={}]
  */
-export default (url: string, data: [], options = {}) => {
+export default (url: string, data: {}, options: Options = {}) => {
   if (!url) throw new Error('Missing url param')
   options = { ...DEFAULT_OPTIONS, ...options }
 
@@ -51,6 +60,6 @@ export default (url: string, data: [], options = {}) => {
     // Clean up
     if (isFormSubmited) document.body.removeChild(containerEl)
   });
-  form.submit()
+  (form as HTMLFormElement).submit()
   isFormSubmited = true
 }
