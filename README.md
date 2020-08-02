@@ -1,22 +1,23 @@
-### Cross-domain requests without CORS-support
-Do you need to make an request (POST or GET) to external resource without CORS?
+### Cross-domain requests without CORS-support 🏓
+Do you need to make an request (POST or GET) from browser to external resource **without CORS**?
 
-If you don't have an access for requested resource and not able to setup right `CORS policy`, use `jsonp` or make (`postMessage`)[https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage] transport – that simple, lightweight (2kb) and non-dependencies library could help you.
+If you don't have an access for requested resource and not able to setup right `CORS policy`, use `jsonp` or make (`postMessage`)[https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage] transport – that simple, lightweight (2kb) and zero-dependencies library could help you.
+
 You could make ajax-like cross-domain request, but without **receiving the response**, because of browser's XSS-protection.
 
 Example:
 ```js
-import PostTransport from 'post-transport'
+import CrossDomainRequest from 'cross-domain-request'
 
 const data = {
   foo: 'bar'
 }
-postTransport('https://example.com/submit', data)
+CrossDomainRequest('https://example.com/submit', data)
 ```
 
 Parameters:
 ```js
-postTransport(url, data, options)
+CrossDomainRequest(url, data, options)
 ```
 - url (string) - requested url for submit data;
 - data (Object);

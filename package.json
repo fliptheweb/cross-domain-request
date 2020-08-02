@@ -1,7 +1,7 @@
 {
-  "name": "post-transport",
+  "name": "cross-domain-request",
   "version": "1.0.0",
-  "description": "Transport for making POST/GET cross-domain requests without CORS",
+  "description": "Make POST/GET cross-domain requests without CORS",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "author": "Artur Kornakov",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "typescript": "^3.9.7"
   }
 }
