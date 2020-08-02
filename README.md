@@ -25,7 +25,7 @@ CrossDomainRequest(url, data, options)
 
 How it works and what's happened under the hood:
 - Make a hidden form;
-- Make an iframe and connect with the form by `[target](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target)` attribute for prevent reload/open new browser tab;
+- Make an iframe and connect with the form by [`target`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target) attribute for prevent reload/open new browser tab;
 - Fill the form data and submit to passed url, but with `target` page won't be reloaded and result will be in the iframe;
 - Clean all artifacts.
 
