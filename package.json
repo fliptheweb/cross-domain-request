@@ -1,6 +1,6 @@
 {
   "name": "cross-domain-request",
-  "version": "1.0.1-0",
+  "version": "1.0.2-0",
   "description": "Make POST/GET cross-domain requests without CORS",
   "keywords": [
     "CORS",
