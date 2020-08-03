@@ -32,6 +32,7 @@ How it works and what's happened under the hood:
 #### TODO:
 - [ ] custom function for serialize nested data
 - [ ] tests
+- [ ] ability to pass FormData
 
 #### References
 - [post-robot](https://github.com/krakenjs/post-robot) - Cross-domain post-messaging library

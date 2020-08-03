@@ -21,13 +21,12 @@ const HIDDEN_STYLES = {
 const HIDDEN_STYLES_STRING = Object.entries(HIDDEN_STYLES).map(([prop, val]) => `${prop}: ${val}`).join(';')
 
 /**
- * Transport for POST cross-domain requests without CORS
- * by using approach with form submited to hidden iframe, without reloading the page
- * @param  {string} url
- * @param  {Object} data
- * @param  {Object} [options={}]
+ * Cross-domain request without CORS
+ * @param  {string} url              URL for submission
+ * @param  {Object} data             Submission data
+ * @param  {Object} [options={}]     Form options
  */
-export default (url: string, data: {}, options: Options = {}) => {
+export default (url: string, data: {}, options: Options = {}): void => {
   if (!url) throw new Error('Missing url param')
   options = { ...DEFAULT_OPTIONS, ...options }
 
@@ -48,8 +47,8 @@ export default (url: string, data: {}, options: Options = {}) => {
   document.body.appendChild(container)
 
   const containerEl = document.getElementById(id)
-  const form = document.getElementById(formId)
-  const frame = document.getElementById(frameId)
+  const form = document.getElementById(formId) as HTMLFormElement
+  const frame = document.getElementById(frameId) as HTMLIFrameElement
 
   if (!containerEl || !form || !frame) {
     throw new Error("Unable to create elements for transport");
@@ -60,6 +59,6 @@ export default (url: string, data: {}, options: Options = {}) => {
     // Clean up
     if (isFormSubmited) document.body.removeChild(containerEl)
   });
-  (form as HTMLFormElement).submit()
+  form.submit()
   isFormSubmited = true
 }
