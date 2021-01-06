@@ -1,3 +1,5 @@
+> `fetch` has a opaque mode by passing `{ mode: 'no-cors' }` option. In that mode, you could achieve the same results (send a cross-domain request without access to a response) as with that library.
+
 ### Cross-domain requests without CORS-support 🏓
 Do you need to make a request (POST or GET) from browser to external resource **without CORS**?
 
